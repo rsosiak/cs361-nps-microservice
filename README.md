@@ -33,4 +33,7 @@ Note: It's recommended that you do not hardcode your API key directly into your 
 
 ## UML sequence diagram
 
-TODO...
+![image](https://user-images.githubusercontent.com/47833214/235327739-038d99b2-1c9a-41a8-a769-c66f56874b6e.png)
+
+Request message is a string consisting of a two character state abbreviation (e.g., NY, TX, UT).
+Returns a response containing National Park Service data for that state (see example response here: https://github.com/rsosiak/cs361-nps-microservice/blob/main/example_response.json).
