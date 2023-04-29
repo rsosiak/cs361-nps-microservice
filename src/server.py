@@ -16,12 +16,15 @@ socket.bind('tcp://*:5555')
 
 while True:
     message = socket.recv()
+    print(f'Received request: {message}')
+    message = message.decode('UTF-8')
+
     response = requests.get(
         'https://developer.nps.gov/api/v1/' +
-        f'parks?stateCode=TX&api_key={NPS_API_KEY}'
+        f'parks?stateCode={message}&api_key={NPS_API_KEY}'
     )
 
-    result = response.json()['data'][0]  # for testing, only return first row
-    print(result)
+    result = response.json()['data'][0]
 
+    print(f'Sending result for message: {message}')
     socket.send_string(json.dumps(result))
