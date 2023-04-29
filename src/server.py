@@ -24,7 +24,7 @@ while True:
         f'parks?stateCode={message}&api_key={NPS_API_KEY}'
     )
 
-    result = response.json()['data'][0]
+    result = response.json()['data']
 
     print(f'Sending result for message: {message}')
     socket.send_string(json.dumps(result))
