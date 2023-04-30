@@ -23,8 +23,9 @@ Currently, there is one endpoint in the microservice. A user can send a request 
 ## How to RECEIVE data from the microservice
 
 When a request is made to the server, the server will perform a GET request. In this case, the {message} is the request sent by the client, and the NPS_API_KEY is your specific API key.
+
 `
-  response = requests.get(f'https://developer.nps.gov/api/v1/'parks?stateCode={message}&api_key={NPS_API_KEY}'
+response = requests.get(f'https://developer.nps.gov/api/v1/'parks?stateCode={message}&api_key={NPS_API_KEY}'
 `
 
 When a request is successful, the response is parsed as a JSON object and sent back to the client via the socket.
